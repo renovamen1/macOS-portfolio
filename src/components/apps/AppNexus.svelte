@@ -10,7 +10,11 @@
 	} = $props();
 </script>
 
-{#if app_id === 'calendar'}
+{#if app_id === 'finder'}
+	{#await import('./Finder/Finder.svelte') then { default: Finder }}
+		<Finder />
+	{/await}
+{:else if app_id === 'calendar'}
 	{#await import('./Calendar/Calendar.svelte') then { default: Calendar }}
 		<Calendar />
 	{/await}

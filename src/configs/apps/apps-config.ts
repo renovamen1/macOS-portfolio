@@ -37,8 +37,11 @@ const finder = create_app_config({
 	title: 'Finder',
 	resizable: true,
 
+	height: 600,
+	width: 900,
+	
 	// dockBreaksBefore: true,
-	should_open_window: false,
+	should_open_window: true,
 });
 
 const safari = create_app_config({

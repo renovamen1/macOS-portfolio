@@ -5,8 +5,12 @@
 	import { sineIn } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
 	import ActionCenterToggle from './ActionCenterToggle.svelte';
+	import BatteryIndicator from './BatteryIndicator.svelte';
+	import BluetoothIndicator from './BluetoothIndicator.svelte';
 	import MenuBar from './MenuBar.svelte';
+	import NetworkIndicator from './NetworkIndicator.svelte';
 	import TopBarTime from './TopBarTime.svelte';
+	import VolumeIndicator from './VolumeIndicator.svelte';
 </script>
 
 <header>
@@ -20,6 +24,14 @@
 		</div>
 	{/if}
 
+	<VolumeIndicator />
+	
+	<BluetoothIndicator />
+	
+	<NetworkIndicator />
+	
+	<BatteryIndicator />
+	
 	<ActionCenterToggle />
 
 	<button>
