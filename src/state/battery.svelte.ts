@@ -1,5 +1,4 @@
 import { persisted } from './persisted.svelte.ts';
-import { interval } from './interval.svelte.ts';
 
 interface BatteryInfo {
 	level: number; // 0-100
@@ -51,7 +50,7 @@ function updateBatteryInfo(battery: any) {
 
 // Mock battery simulation for demonstration
 function startMockBattery() {
-	interval(() => {
+	setInterval(() => {
 		if (battery_state.charging) {
 			battery_state.level = Math.min(100, battery_state.level + 1);
 			if (battery_state.level >= 100) {
