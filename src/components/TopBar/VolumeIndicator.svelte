@@ -68,7 +68,7 @@
 		volumeState.outputDevice = device.name;
 	}
 
-	$: displayVolume = volumeState.muted ? 0 : volumeState.level;
+	const displayVolume = $derived(volumeState.muted ? 0 : volumeState.level);
 </script>
 
 <div class="container" use:click_outside={hide} use:focus_outside={hide}>

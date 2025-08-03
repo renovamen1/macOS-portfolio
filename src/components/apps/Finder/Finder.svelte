@@ -49,10 +49,10 @@
 	};
 
 	// Get current directory contents
-	$: currentItems = getCurrentItems(currentPath);
-	$: filteredItems = searchQuery 
+	const currentItems = $derived(getCurrentItems(currentPath));
+	const filteredItems = $derived(searchQuery 
 		? currentItems.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
-		: currentItems;
+		: currentItems);
 
 	function getCurrentItems(path: string) {
 		const current = fileSystem[path];

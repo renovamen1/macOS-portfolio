@@ -20,9 +20,9 @@
 		battery_state.charging = !battery_state.charging;
 	}
 
-	$: batteryPercentage = battery_state.level;
-	$: isCharging = battery_state.charging;
-	$: timeRemaining = isCharging ? battery_state.chargingTime : battery_state.dischargingTime;
+	const batteryPercentage = $derived(battery_state.level);
+	const isCharging = $derived(battery_state.charging);
+	const timeRemaining = $derived(isCharging ? battery_state.chargingTime : battery_state.dischargingTime);
 </script>
 
 <div class="container" use:click_outside={hide} use:focus_outside={hide}>
